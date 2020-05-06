@@ -16,16 +16,17 @@ class Dice:
     > 6 * d6 + 1   # Throw dice 6 times and add 1
     """
 
-    __slots__ = ["n"]
+    __slots__ = ["n", "func"]
 
-    def __init__(self, n):
+    def __init__(self, n, func=random.randint):
         self.n = n
+        self.func = func
 
     def __repr__(self):
         return f"Dice({self.n})"
 
     def __call__(self):
-        return random.randint(1, self.n)
+        return self.func(1, self.n)
 
     def __add__(self, value):
         return self() + value
@@ -75,28 +76,19 @@ def gaussint(lower, upper, sigma=1, radius=3):
     return lower + int(value // step)
 
 
-class GaussDice(Dice):
-    """
-    A GaussDice is Dice with a normal distribution.
-
-    See Dice for more information
-    """
-
-    def __init__(self, n, sigma=1):
-        self.n = n
-        self.sigma = sigma
-
-    def __call__(self):
-        return gaussint(1, n)
+def curried_gaussint(sigma=1, radius=3):
+    def func(lower, upper):
+        return gaussint(lower, upper, sigma, radius)
+    return func
 
 
-gd4   = GaussDice(4)
-gd6   = GaussDice(6)
-gd8   = GaussDice(8)
-gd10  = GaussDice(10)
-gd12  = GaussDice(12)
-gd20  = GaussDice(20)
-gd100 = GaussDice(100)
+gd4   = Dice(4,   curried_gaussint())
+gd6   = Dice(6,   curried_gaussint())
+gd8   = Dice(8,   curried_gaussint())
+gd10  = Dice(10,  curried_gaussint())
+gd12  = Dice(12,  curried_gaussint())
+gd20  = Dice(20,  curried_gaussint())
+gd100 = Dice(100, curried_gaussint())
 
 
 def test(func, prob_size=1000, lower=0, upper=10):
