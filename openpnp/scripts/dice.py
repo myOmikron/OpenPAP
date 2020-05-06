@@ -1,6 +1,10 @@
 import random
 
 
+__all__ = [ "d4",  "d6",  "d8",  "d12",  "d20",  "d100",
+           "gd4", "gd6", "gd8", "gd12", "gd20", "gd100"]
+
+
 class Dice:
     """
     Dice(n) represents a n-sided dice
