@@ -86,12 +86,12 @@ def curried_gaussint(sigma=1, radius=3):
     return func
 
 
-gd4   = Dice(4,   curried_gaussint())
-gd6   = Dice(6,   curried_gaussint())
-gd8   = Dice(8,   curried_gaussint())
-gd10  = Dice(10,  curried_gaussint())
-gd12  = Dice(12,  curried_gaussint())
-gd20  = Dice(20,  curried_gaussint())
+gd4 = Dice(4, curried_gaussint())
+gd6 = Dice(6, curried_gaussint())
+gd8 = Dice(8, curried_gaussint())
+gd10 = Dice(10, curried_gaussint())
+gd12 = Dice(12, curried_gaussint())
+gd20 = Dice(20, curried_gaussint())
 gd100 = Dice(100, curried_gaussint())
 
 
