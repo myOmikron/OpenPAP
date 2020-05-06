@@ -1,5 +1,22 @@
 import random
 
+def gaussint(lower, upper, sigma=1, radius=4):
+    """
+    Like random.randint but with a normal distribution
+
+    Use random.gauss with ´sigma´ to get a random value on the x-axis.
+    The ´radius´ then defines the x-axis' portion
+    which will be mapped to the desired range.
+    If the value falls outside this portion,
+    it will be replaced by a new one.
+    """
+    value = random.gauss(radius, sigma)
+    while value < 0 or value > 2*radius:
+        value = random.gauss(sigma, radius)
+
+    step = 2*radius/(upper - lower + 1)
+    return lower + int(value // step)
+
 class Dice:
     """
     Dice(n) represents a n-sided dice
