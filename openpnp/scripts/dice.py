@@ -46,12 +46,13 @@ class Dice:
         return self.__mul__(value)
 
 
-d4  = Dice(4)
-d6  = Dice(6)
-d8  = Dice(8)
-d10 = Dice(10)
-d12 = Dice(12)
-d20 = Dice(20)
+d4   = Dice(4)
+d6   = Dice(6)
+d8   = Dice(8)
+d10  = Dice(10)
+d12  = Dice(12)
+d20  = Dice(20)
+d100 = Dice(100)
 
 
 def gaussint(lower, upper, sigma=1, radius=3):
@@ -89,12 +90,13 @@ class GaussDice(Dice):
         return gaussint(1, n)
 
 
-gd4  = GaussDice(4)
-gd6  = GaussDice(6)
-gd8  = GaussDice(8)
-gd10 = GaussDice(10)
-gd12 = GaussDice(12)
-gd20 = GaussDice(20)
+gd4   = GaussDice(4)
+gd6   = GaussDice(6)
+gd8   = GaussDice(8)
+gd10  = GaussDice(10)
+gd12  = GaussDice(12)
+gd20  = GaussDice(20)
+gd100 = GaussDice(100)
 
 
 def test(func, prob_size=1000, lower=0, upper=10):
