@@ -46,16 +46,16 @@ class Dice:
         return self.__mul__(value)
 
 
-d4   = Dice(4)
-d6   = Dice(6)
-d8   = Dice(8)
-d10  = Dice(10)
-d12  = Dice(12)
-d20  = Dice(20)
+d4 = Dice(4)
+d6 = Dice(6)
+d8 = Dice(8)
+d10 = Dice(10)
+d12 = Dice(12)
+d20 = Dice(20)
 d100 = Dice(100)
 
 
-def gaussint(lower, upper, sigma=1, radius=3):
+def gauss_int(lower, upper, sigma=1, radius=3):
     """
     Like random.randint but with a normal distribution
 
@@ -66,12 +66,12 @@ def gaussint(lower, upper, sigma=1, radius=3):
     it will be replaced by a new one.
     """
     value = random.gauss(radius, sigma)
-    while value < 0 or value > 2*radius:
+    while value < 0 or value > 2 * radius:
         value = random.gauss(sigma, radius)
         # Uncomment for checking likeliness of reroll
         # print("reroll")
 
-    step = 2*radius/(upper - lower + 1)
+    step = 2 * radius / (upper - lower + 1)
     return lower + int(value // step)
 
 
@@ -83,19 +83,20 @@ class GaussDice(Dice):
     """
 
     def __init__(self, n, sigma=1):
+        super().__init__(n)
         self.n = n
         self.sigma = sigma
 
     def __call__(self):
-        return gaussint(1, n)
+        return gauss_int(1, self.n)
 
 
-gd4   = GaussDice(4)
-gd6   = GaussDice(6)
-gd8   = GaussDice(8)
-gd10  = GaussDice(10)
-gd12  = GaussDice(12)
-gd20  = GaussDice(20)
+gd4 = GaussDice(4)
+gd6 = GaussDice(6)
+gd8 = GaussDice(8)
+gd10 = GaussDice(10)
+gd12 = GaussDice(12)
+gd20 = GaussDice(20)
 gd100 = GaussDice(100)
 
 
@@ -106,8 +107,7 @@ def test(func, prob_size=1000, lower=0, upper=10):
     Call random.randint-like ´func´ ´prob_size´-times
     and count the result.
     """
-    list = [0 for i in range(lower, upper+1)]
+    ret = [0 for i in range(lower, upper + 1)]
     for i in range(prob_size):
-        list[func(lower, upper)-lower] += 1
-    return list
-
+        ret[func(lower, upper) - lower] += 1
+    return ret
