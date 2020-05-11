@@ -1,3 +1,24 @@
 {% extends "base/base.html" %}
 {% block body %}
+    {% load static %}
+    <div class="flexbox-vertical">
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_player }}" class="flexbox-horizontal">
+                <img src="/static/img/play.png" alt="play">
+                <div class="white-bold" id="dashboard-box-h1">Player</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_game_master }}" class="flexbox-horizontal">
+                <img src="/static/img/gamemaster.png" alt="gamemaster">
+                <div class="white-bold" id="dashboard-box-h1">Game Master</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_settings }}" class="flexbox-horizontal">
+                <img src="/static/img/settings.png" alt="settings">
+                <div class="white-bold" id="dashboard-box-h1">Website Settings</div>
+            </a>
+        </div>
+    </div>
 {% endblock %}

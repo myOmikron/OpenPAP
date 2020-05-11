@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
     <meta charset="UTF-8">
-    <title></title>
+    <title>{{ title }}</title>
 </head>
-<body>
+<body class="base">
+<header>
+    <div class="flexbox-horizontal" id="header">
+        <div class="white-bold">OpenPnP</div>
+    </div>
+</header>
 {% block body %}
 {% endblock %}
+<div id="footer">
+    <div class="white">All Icons are from <a class="white" href="https://icons8.com">Icons8</a></div>
+</div>
 </body>
 </html>

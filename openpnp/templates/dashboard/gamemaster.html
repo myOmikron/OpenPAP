@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+{% block body %}
+    {% load static %}
+    <div class="flexbox-vertical">
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_play }}" class="flexbox-horizontal">
+                <img src="/static/img/play.png" alt="play">
+                <div class="white-bold" id="dashboard-box-h1">Play a campaign</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_create_campaign }}" class="flexbox-horizontal">
+                <img src="/static/img/create.png" alt="create">
+                <div class="white-bold" id="dashboard-box-h1">Create a campaign</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_create_encounter }}" class="flexbox-horizontal">
+                <img src="/static/img/encounter.png" alt="encounter">
+                <div class="white-bold" id="dashboard-box-h1">Create an encounter</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_create_monster }}" class="flexbox-horizontal">
+                <img src="/static/img/monster.png" alt="monster">
+                <div class="white-bold" id="dashboard-box-h1">Create a monster</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_create_npc }}" class="flexbox-horizontal">
+                <img src="/static/img/npc.png" alt="npc">
+                <div class="white-bold" id="dashboard-box-h1">Create a NPC</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_create_map }}" class="flexbox-horizontal">
+                <img src="/static/img/map.png" alt="map">
+                <div class="white-bold" id="dashboard-box-h1">Create a map</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_create_world_setting }}" class="flexbox-horizontal">
+                <img src="/static/img/globe.png" alt="world setting">
+                <div class="white-bold" id="dashboard-box-h1">Create a setting</div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% block body %}
+    {% load static %}
+    <div class="flexbox-vertical">
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_play }}" class="flexbox-horizontal">
+                <img src="/static/img/play.png" alt="play">
+                <div class="white-bold" id="dashboard-box-h1">Play a campaign</div>
+            </a>
+        </div>
+        <div id="dashboard-box">
+            <a href="{{ dashboard_link_character }}" class="flexbox-horizontal">
+                <img src="/static/img/create.png" alt="create">
+                <div class="white-bold" id="dashboard-box-h1">Create a character</div>
+            </a>
+        </div>
+    </div>
+{% endblock %}
