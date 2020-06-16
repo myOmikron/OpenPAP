@@ -22,7 +22,8 @@ class GameMasterView(TemplateView):
                                                     "dashboard_link_create_monster": "/create_monster",
                                                     "dashboard_link_create_encounter": "/create_encounter",
                                                     "dashboard_link_create_npc": "/create_npc",
-                                                    "dashboard_link_create_world_setting": "/create_world_setting"})
+                                                    "dashboard_link_create_world_setting": "/create_world_setting",
+                                                    "dashboard_link_create_template": "/create_template"})
 
 
 class PlayerView(TemplateView):
