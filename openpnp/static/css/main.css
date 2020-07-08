@@ -1,9 +1,14 @@
 body {
     margin: 0;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
 }
 
 a {
     text-decoration: none;
+}
+
+h1 {
+    color: white;
 }
 
 .base {
@@ -66,5 +71,18 @@ a {
 }
 
 #dashboard-box-h1 {
-    font-size: larger;
+    font-size: medium;
+}
+
+#new-template-box {
+    width: 450px;
+    margin: 50px;
+    padding: 20px;
+    border: solid white;
+    border-radius: 10px;
+}
+
+label {
+    color: white;
+    margin: 30px;
 }
