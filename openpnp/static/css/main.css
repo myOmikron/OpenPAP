@@ -11,8 +11,20 @@ h1 {
     color: white;
 }
 
+li {
+    color: red;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 .base {
-    background-color: #2e3141;
+    background-color: #242424;
 }
 
 .flexbox-vertical {
@@ -43,7 +55,7 @@ h1 {
 #header {
     margin: 0;
     padding: 20px;
-    background-color: #3d4473;
+    background-color: darkred;
     font-size: 3em;
 }
 
@@ -53,21 +65,21 @@ h1 {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #3d4473;
+    background-color: darkred;
     color: white;
     text-align: center;
 }
 
 #dashboard-box {
-    width: 175px;
     margin: 50px;
     padding: 20px;
     border: solid white;
     border-radius: 10px;
+    text-align: center;
 }
 
 #dashboard-box:hover {
-    background-color: #43404c;
+    background-color: #3b3b3b;
 }
 
 #dashboard-box-h1 {
