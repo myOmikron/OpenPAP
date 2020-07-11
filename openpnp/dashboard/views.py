@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
+
+from dashboard import forms
 from dashboard.models import *
 
 
@@ -33,17 +35,24 @@ class TemplatesView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {"title": "OpenPnP - Templates",
-                                                    "dashboard_link_create_template": "/create_template"})
-
-
-class CreateTemplateView(TemplateView):
-    template_name = "dashboard/create_template.html"
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+                                                    "dashboard_link_create_template": "/create_template",
+                                                    "templates": [x for x in Template.objects.all()]})
 
     def post(self, request):
-        return redirect('/template')
+        print(request.POST.__dict__)
+        return render(request, self.template_name, {"title": "OpenPnp - Templates",
+                                                    "dashboard_link_create_template": "/create_template",
+                                                    "templates": [x for x in Template.objects.all()]})
+
+
+class CreateTemplateView(FormView):
+    template_name = "dashboard/create_template.html"
+    form_class = forms.CreateTemplateForm
+    success_url = "/template"
+
+    def form_valid(self, form):
+        form.create_template()
+        return super().form_valid(form)
 
 
 class PlayerView(TemplateView):

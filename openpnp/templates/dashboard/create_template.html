@@ -3,14 +3,17 @@
     {% load static %}
     <div class="flexbox-vertical">
         <div id="new-template-box">
-            <h1>Create a new template</h1>
             <form method="post" action="/create_template">
-            {% csrf_token %}
-                <div class="flexbox-vertical">
-                    <label for="name" class="white-bold">Name</label>
-                    <input type="text" class="text-input" name="name" id="name">
-                </div>
-                <button>Submit</button>
+                <div class="flexbox-horizontal">
+                    <h1>Create a new template</h1>
+                    {% csrf_token %}
+                    {{ form.name.errors }}
+                    <div class="flexbox-vertical">
+                        <label for="{{ form.name.id_for_label }}">Name:</label>
+                        {{ form.name }}
+                    </div>
+                    <button>Submit</button>
+               </div>
             </form>
         </div>
     </div>
