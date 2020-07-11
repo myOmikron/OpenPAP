@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body class="base">
-<header>
-    <div class="flexbox-horizontal" id="header">
-        <div class="white-bold">OpenPnP</div>
-    </div>
-</header>
-{% block body %}
-{% endblock %}
-<div id="footer">
-    <div class="white">All Icons are from <a class="white" href="https://icons8.com">Icons8</a></div>
-</div>
-</body>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+        <script src="{% static "js/main.js" %}"></script>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    </head>
+    <body class="base">
+        <header>
+            <div class="flexbox-horizontal" id="header">
+                <div class="white-bold">OpenPnP</div>
+            </div>
+        </header>
+        <div class="sidenav">
+            <a href="/player">Player</a>
+            <a href="/gamemaster">Gamemaster</a>
+            <a href="/admin">Administration</a>
+            <button class="dropdown-btn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        {% block body %}
+        {% endblock %}
+        <div id="footer">
+            <div class="white">All Icons are from <a class="white" href="https://icons8.com">Icons8</a></div>
+        </div>
+    </body>
 </html>
