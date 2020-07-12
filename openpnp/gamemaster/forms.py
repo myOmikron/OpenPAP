@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from dashboard import models
+from gamemaster import models
 
 
 class CreateTemplateForm(forms.Form):
