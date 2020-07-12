@@ -3,33 +3,43 @@
     <head>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
-        <script src="{% static "js/main.js" %}"></script>
         <meta charset="UTF-8">
         <title>{{ title }}</title>
     </head>
     <body class="base">
-        <header>
-            <div class="flexbox-horizontal" id="header">
-                <div class="white-bold">OpenPnP</div>
-            </div>
-        </header>
-        <div class="sidenav">
-            <a href="/player">Player</a>
-            <a href="/gamemaster">Gamemaster</a>
-            <a href="/admin">Administration</a>
-            <button class="dropdown-btn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
+    <div class="sidenav">
+        <hr />
+        <a id="sidenav-heading" href="/">PNP Zone</a>
+        <hr />
+        <button class="dropdown-btn">Player
+            <i class="fa fa-caret-down">&#9660</i>
+        </button>
+        <div class="dropdown-container">
+            <a href="/player">Overwiew</a>
+            <a href="/play">Play</a>
+            <a href="/character">Campaigns</a>
         </div>
+        <button class="dropdown-btn">Gamemaster
+            <i class="fa fa-caret-down">&#9660</i>
+        </button>
+        <div class="dropdown-container">
+            <a href="/gamemaster">Overwiew</a>
+            <a href="/play">Play</a>
+            <a href="/campaign">Campaigns</a>
+            <a href="/encounter">Encounters</a>
+            <a href="/monster">Monsters</a>
+            <a href="/npc">NPCs</a>
+            <a href="/map">Maps</a>
+            <a href="/setting">Settings</a>
+            <a href="/template">Templates</a>
+        </div>
+        <a href="/admin">Administration</a>
+    </div>
         {% block body %}
         {% endblock %}
         <div id="footer">
             <div class="white">All Icons are from <a class="white" href="https://icons8.com">Icons8</a></div>
         </div>
+        <script src="{% static "js/main.js" %}"></script>
     </body>
 </html>
