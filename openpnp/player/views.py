@@ -8,6 +8,6 @@ class PlayerView(TemplateView):
 
     def get(self, request, *args, **kwargs):
 
-        return render(request, self.template_name, {"title": "OpenPnP - Player",
-                                                    "dashboard_link_play": "/play",
-                                                    "dashboard_link_character": "/character"})
+        return render(request, self.template_name, {"dashboard_link_play": "/play",
+                                                    "dashboard_link_character": "/character",
+                                                    "breadcrumps": "Dashboard: Player: Overview"})

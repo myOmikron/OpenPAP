@@ -50,7 +50,7 @@ ul {
 }
 
 .white {
-    color: #aaa;
+    color: #d6d6d6;
 }
 
 #footer {
@@ -107,6 +107,7 @@ label {
     background-color: #1c1c1c;
     overflow-x: hidden;
     padding-top: 20px;
+    box-shadow: 10px 10px 10px #1a1a1a;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -172,4 +173,18 @@ label {
 
 hr {
     width: 35%;
+}
+
+#heading {
+    margin: 30px;
+    background-color: #333;
+    align-items: flex-start;
+    box-shadow: -10px 10px 10px #1a1a1a;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.breadcrumbs {
+    padding: 20px;
+    color: white;
 }

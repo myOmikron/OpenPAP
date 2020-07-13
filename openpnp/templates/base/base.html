@@ -4,37 +4,40 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
         <meta charset="UTF-8">
-        <title>{{ title }}</title>
+        <title>PNP Zone</title>
     </head>
     <body class="base">
-    <div class="sidenav">
-        <hr />
-        <a id="sidenav-heading" href="/">PNP Zone</a>
-        <hr />
-        <button class="dropdown-btn">Player
-            <i class="fa fa-caret-down">&#9660</i>
-        </button>
-        <div class="dropdown-container">
-            <a href="/player/">Overwiew</a>
-            <a href="/player/play">Play</a>
-            <a href="/player/character">Campaigns</a>
+        <div class="sidenav">
+            <hr />
+            <a id="sidenav-heading" href="/">PNP Zone</a>
+            <hr />
+            <button class="dropdown-btn">Player
+                <i class="fa fa-caret-down">&#9660</i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/player/">Overwiew</a>
+                <a href="/player/play">Play</a>
+                <a href="/player/character">Campaigns</a>
+            </div>
+            <button class="dropdown-btn">Gamemaster
+                <i class="fa fa-caret-down">&#9660</i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/gamemaster/">Overwiew</a>
+                <a href="/gamemaster/play">Play</a>
+                <a href="/gamemaster/campaign">Campaigns</a>
+                <a href="/gamemaster/encounter">Encounters</a>
+                <a href="/gamemaster/monster">Monsters</a>
+                <a href="/gamemaster/npc">NPCs</a>
+                <a href="/gamemaster/map">Maps</a>
+                <a href="/gamemaster/setting">Settings</a>
+                <a href="/gamemaster/template">Templates</a>
+            </div>
+            <a href="/admin">Administration</a>
         </div>
-        <button class="dropdown-btn">Gamemaster
-            <i class="fa fa-caret-down">&#9660</i>
-        </button>
-        <div class="dropdown-container">
-            <a href="/gamemaster/">Overwiew</a>
-            <a href="/gamemaster/play">Play</a>
-            <a href="/gamemaster/campaign">Campaigns</a>
-            <a href="/gamemaster/encounter">Encounters</a>
-            <a href="/gamemaster/monster">Monsters</a>
-            <a href="/gamemaster/npc">NPCs</a>
-            <a href="/gamemaster/map">Maps</a>
-            <a href="/gamemaster/setting">Settings</a>
-            <a href="/gamemaster/template">Templates</a>
+        <div class="flexbox-horizontal" id="heading">
+           <div class="breadcrumbs">{{ breadcrumps }}</div>
         </div>
-        <a href="/admin">Administration</a>
-    </div>
         {% block body %}
         {% endblock %}
         <div id="footer">

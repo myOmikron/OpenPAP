@@ -6,7 +6,7 @@ class IndexView(TemplateView):
     template_name = "dashboard/index.html"
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {"title": "OpenPnP - Dashboard",
-                                                    "dashboard_link_player": "/player",
+        return render(request, self.template_name, {"dashboard_link_player": "/player",
                                                     "dashboard_link_game_master": "/gamemaster",
-                                                    "dashboard_link_settings": "/admin"})
+                                                    "dashboard_link_settings": "/admin",
+                                                    "breadcrumps": "Dashboard: Overwiew"})
