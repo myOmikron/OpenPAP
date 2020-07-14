@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, FormView, CreateView
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import TemplateView, CreateView, UpdateView
 from gamemaster.models import *
-from gamemaster.forms import *
 
 
 class GameMasterView(TemplateView):
@@ -44,3 +43,10 @@ class CreateTemplateView(CreateView):
         ctx = super().get_context_data(**kwargs)
         ctx["breadcrumps"] = "Dashboard: Gamemaster: Template: CreateTemplate"
         return ctx
+
+
+class UpdateTemplateView(UpdateView):
+    template_name = "dashboard/update_template.html"
+    model = Template
+    fields = ["name"]
+    success_url = "/gamemaster/template"
