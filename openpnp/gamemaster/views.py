@@ -50,3 +50,8 @@ class UpdateTemplateView(UpdateView):
     model = Template
     fields = ["name"]
     success_url = "/gamemaster/template"
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx["breadcrumps"] = "Dashboard: Gamemaster: Template: Edit Template"
+        return ctx
