@@ -68,11 +68,12 @@ ul {
 }
 
 #dashboard-box {
-    margin: 50px;
+    margin: 30px;
     padding: 20px;
-    border: solid white;
-    border-radius: 10px;
+    background-color: #333;
     text-align: center;
+    border: 1px solid #1a1a1a;
+    box-shadow: 10px 10px 10px #1a1a1a;
 }
 
 #dashboard-box:hover {
@@ -84,11 +85,11 @@ ul {
 }
 
 #new-template-box {
-    width: 450px;
+    background-color: #333;
     margin: 50px;
     padding: 20px;
-    border: solid white;
-    border-radius: 10px;
+    border: 1px solid #1a1a1a;
+    box-shadow: 10px 10px 10px #1a1a1a;
 }
 
 label {
@@ -176,12 +177,12 @@ hr {
 }
 
 #heading {
-    margin: 30px;
+    margin: 10px 25px 10px 25px;
     background-color: #333;
     align-items: flex-start;
     box-shadow: -10px 10px 10px #1a1a1a;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid #131313;
+    border-bottom: 1px solid #131313;
 }
 
 .breadcrumbs {
