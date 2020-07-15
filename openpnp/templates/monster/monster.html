@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+{% block body %}
+    {% load static %}
+    <div class="flexbox-vertical">
+        <div id="dashboard-box">
+            <a href="{{ link_create_monster }}" class="flexbox-horizontal">
+                <img src="/static/img/create.png" alt="play">
+                <div class="white-bold" id="dashboard-box-h1">Add new</div>
+            </a>
+        </div>
+        {% for entry in monsters %}
+        <div id="dashboard-box">
+            <a href="{{ entry.id }}" class="flexbox-horizontal">
+                <img src="/static/img/create.png" alt="create">
+                <div class="white-bold" id="dashboard-box-h1">{{ entry.name }}</div>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

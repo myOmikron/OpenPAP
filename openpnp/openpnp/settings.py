@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'gamemaster',
     'template',
     'campaign',
+    'monster',
 ]
 
 MIDDLEWARE = [
