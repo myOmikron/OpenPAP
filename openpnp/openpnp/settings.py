@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'dashboard',
     'player',
     'gamemaster',
+    'template',
 ]
 
 MIDDLEWARE = [

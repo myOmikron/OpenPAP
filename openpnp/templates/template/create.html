@@ -3,7 +3,7 @@
     {% load static %}
     <div class="flexbox-vertical">
         <div id="new-template-box">
-            <form method="post" action="create_template">
+            <form method="post" action="">
                 <div class="flexbox-horizontal">
                     <h1>Create a new template</h1>
                     {% csrf_token %}
@@ -11,6 +11,14 @@
                     <div class="flexbox-vertical">
                         <label for="{{ form.name.id_for_label }}">Name:</label>
                         {{ form.name }}
+                    </div>
+                    <div class="flexbox-vertical">
+                        <label for="{{ form.skills.id_for_label }}">Skills:</label>
+                        {{ form.skills }}
+                    </div>
+                    <div class="flexbox-vertical">
+                        <label for="{{ form.attributes.id_for_label }}">Attributes</label>
+                        {{ form.attributes }}
                     </div>
                     <button>Submit</button>
                </div>

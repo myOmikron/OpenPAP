@@ -10,7 +10,7 @@
         </div>
         {% for entry in templates %}
         <div id="dashboard-box">
-            <a href="template/{{ entry.id }}" class="flexbox-horizontal">
+            <a href="{{ entry.id }}" class="flexbox-horizontal">
                 <img src="/static/img/create.png" alt="create">
                 <div class="white-bold" id="dashboard-box-h1">{{ entry.name }}</div>
             </a>
