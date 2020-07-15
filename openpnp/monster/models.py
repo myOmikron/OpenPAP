@@ -20,7 +20,7 @@ class Size(models.Model):
 
 
 class Race(models.Model):
-    race = CharField(max_length=255, unique=True)
+    race = CharField(max_length=255)
     comment = CharField(max_length=255)
 
 
