@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'player',
     'gamemaster',
     'template',
+    'campaign',
 ]
 
 MIDDLEWARE = [
