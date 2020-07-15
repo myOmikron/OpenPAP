@@ -67,6 +67,7 @@ class Monster(models.Model):
     senses = []
     languages = ManyToManyField(Language)
     challenge = FloatField(default=1)
+    challenge_xp = IntegerField(default=10)
     attacks = []
 
     actions = []
