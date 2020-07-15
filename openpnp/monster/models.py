@@ -23,13 +23,22 @@ class Race(models.Model):
     race = CharField(max_length=255)
     comment = CharField(max_length=255)
 
+    def __str__(self):
+        return " ".join([self.race, self.comment])
+
 
 class Alignment(models.Model):
     alignment = CharField(max_length=255, unique=True)
 
+    def __str__(self):
+        return self.alignment
+
 
 class Language(models.Model):
     language = CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.language
 
 
 class Monster(models.Model):
@@ -61,3 +70,6 @@ class Monster(models.Model):
     attacks = []
 
     actions = []
+
+    def __str__(self):
+        return self.name
