@@ -3,8 +3,8 @@ from django.db.models import CharField, ForeignKey, CASCADE, IntegerField, Float
 
 
 class Size(models.Model):
-    size = CharField(max_length=255)
-    internal_size = IntegerField(default=0)
+    size = CharField(max_length=255, unique=True)
+    internal_size = IntegerField(default=0, unique=True)
 
     def __str__(self):
         return self.size
@@ -20,20 +20,20 @@ class Size(models.Model):
 
 
 class Race(models.Model):
-    race = CharField(max_length=255)
+    race = CharField(max_length=255, unique=True)
     comment = CharField(max_length=255)
 
 
 class Alignment(models.Model):
-    alignment = CharField(max_length=255)
+    alignment = CharField(max_length=255, unique=True)
 
 
 class Language(models.Model):
-    language = CharField(max_length=255)
+    language = CharField(max_length=255, unique=True)
 
 
 class Monster(models.Model):
-    name = CharField(max_length=255, default="")
+    name = CharField(max_length=255, default="", unique=True)
 
     size = ForeignKey(Size, on_delete=CASCADE)
     race = ForeignKey(Race, on_delete=CASCADE)
