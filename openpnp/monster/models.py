@@ -21,7 +21,7 @@ class Size(models.Model):
 
 class Race(models.Model):
     race = CharField(max_length=255)
-    comment = CharField(max_length=255)
+    comment = CharField(max_length=255, default="")
 
     def __str__(self):
         return " ".join([self.race, self.comment])
@@ -41,12 +41,64 @@ class Language(models.Model):
         return self.language
 
 
+class Action(models.Model):
+    action = CharField(max_length=255, default="")
+    description = CharField(max_length=2048, default="")
+
+    def __str__(self):
+        return self.action
+
+
+class Sense(models.Model):
+    sense = CharField(max_length=255, default="")
+
+    def __str__(self):
+        return self.sense
+
+
+class Skill(models.Model):
+    skill = CharField(max_length=255, default="")
+    value = IntegerField(default=0)
+
+    def __str__(self):
+        return self.skill
+
+
+class SavingThrow(models.Model):
+    attribute = CharField(max_length=255, default="")
+    value = IntegerField(default=0)
+
+    def __str__(self):
+        return self.attribute
+
+
+class DamageImmunity(models.Model):
+    damage_immunity = CharField(max_length=255, default="")
+
+    def __str__(self):
+        return self.damage_immunity
+
+
+class DamageResistance(models.Model):
+    damage_resistance = CharField(max_length=255, default="")
+
+    def __str__(self):
+        return self.damage_resistance
+
+
+class ConditionImmunity(models.Model):
+    condition_immunity = CharField(max_length=255, default="")
+
+    def __str__(self):
+        return self.condition_immunity
+
+
 class Monster(models.Model):
     name = CharField(max_length=255, default="", unique=True)
 
-    size = ForeignKey(Size, on_delete=CASCADE)
-    race = ForeignKey(Race, on_delete=CASCADE)
-    alignment = ForeignKey(Alignment, on_delete=CASCADE)
+    size = ForeignKey(Size, on_delete=CASCADE, null=True)
+    race = ForeignKey(Race, on_delete=CASCADE, null=True)
+    alignment = ForeignKey(Alignment, on_delete=CASCADE, null=True)
 
     armor_class = IntegerField(default=10)
     armor_description = CharField(max_length=255, blank=True)
@@ -62,15 +114,18 @@ class Monster(models.Model):
     wisdom = IntegerField(default=10)
     charisma = IntegerField(default=10)
 
-    saving_throws = {}
-    skills = []
-    senses = []
+    saving_throws = ManyToManyField(SavingThrow)
+    skills = ManyToManyField(Skill)
+    senses = ManyToManyField(Sense)
     languages = ManyToManyField(Language)
+    damage_resistances = ManyToManyField(DamageResistance)
+    damage_immunities = ManyToManyField(DamageImmunity)
+    condition_immunities = ManyToManyField(ConditionImmunity)
     challenge = FloatField(default=1)
     challenge_xp = IntegerField(default=10)
     attacks = []
 
-    actions = []
+    actions = ManyToManyField(Action)
 
     def __str__(self):
         return self.name
