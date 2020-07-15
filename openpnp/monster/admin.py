@@ -1,3 +1,9 @@
 from django.contrib import admin
+from monster.models import *
 
-# Register your models here.
+
+admin.site.register(Size)
+admin.site.register(Race)
+admin.site.register(Alignment)
+admin.site.register(Monster)
+admin.site.register(Language)
