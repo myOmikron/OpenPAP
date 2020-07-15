@@ -23,7 +23,7 @@ class CreateTemplateView(CreateView):
     template_name = "template/create.html"
     model = TemplateModel
     fields = ["name", "skills", "attributes"]
-    success_url = ""
+    success_url = "/gamemaster/template/"
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -35,7 +35,7 @@ class UpdateTemplateView(UpdateView):
     template_name = "template/update.html"
     model = TemplateModel
     fields = ["name", "skills", "attributes"]
-    success_url = "gamemaster/template"
+    success_url = "/gamemaster/template/"
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
