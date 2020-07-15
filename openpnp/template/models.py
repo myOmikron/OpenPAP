@@ -24,8 +24,8 @@ class SkillTemplateModel(models.Model):
 
 class TemplateModel(models.Model):
     name = models.CharField(default="", max_length=255, unique=True)
-    skills = models.ManyToManyField(SkillTemplateModel)
-    attributes = models.ManyToManyField(AttributeTemplateModel)
+    skills = models.ManyToManyField(SkillTemplateModel, blank=True)
+    attributes = models.ManyToManyField(AttributeTemplateModel, blank=True)
 
     def __str__(self):
         return self.name
