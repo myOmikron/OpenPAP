@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'template',
     'campaign',
     'monster',
+    'api',
 ]
 
 MIDDLEWARE = [
