@@ -93,8 +93,17 @@ class ConditionImmunity(models.Model):
         return self.condition_immunity
 
 
+class Tag(models.Model):
+    tag = CharField(max_length=255, default="")
+
+    def __str__(self):
+        return self.tag
+
+
 class Monster(models.Model):
     name = CharField(max_length=255, default="", unique=True)
+
+    tag = ForeignKey(Tag, on_delete=CASCADE, null=True)
 
     size = ForeignKey(Size, on_delete=CASCADE, null=True)
     race = ForeignKey(Race, on_delete=CASCADE, null=True)
