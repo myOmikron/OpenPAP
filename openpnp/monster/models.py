@@ -138,3 +138,34 @@ class Monster(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_json(self):
+        ret = {
+            "name": self.name,
+            "tag": self.tag.tag,
+            "size": self.size.size,
+            "race": {self.race_id: self.race.race},
+            "alignment": self.alignment.alignment,
+            "armor_class": self.armor_class,
+            "armor_description": self.armor_description,
+            "hit_points": self.hit_points,
+            "hit_points_alt": self.hit_points_alt,
+            "speed_base": self.speed_base,
+            "speed_alt": self.speed_alt,
+            "strength": self.strength,
+            "dexterity": self.dexterity,
+            "constitution": self.constitution,
+            "intelligence": self.intelligence,
+            "wisdom": self.wisdom,
+            "charisma": self.charisma,
+            "saving_throws": [{x.attribute: x.value for x in self.saving_throws.all()}],
+            "skills": [{x.skill: x.value for x in self.skills.all()}],
+            "senses": [x.sense for x in self.senses.all()],
+            "languages": [{x.id: x.language for x in self.languages.all()}],
+            "damage_resistances": [x.damage_resistance for x in self.damage_resistances.all()],
+            "damage_immunities": [x.damage_immunity for x in self.damage_immunities.all()],
+            "condition_immunities": [x.condition_immunity for x in self.condition_immunities.all()],
+            "challenge": self.challenge,
+            "challenge_xp": self.challenge_xp,
+        }
+        return ret
